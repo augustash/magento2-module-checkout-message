@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Checkout Message Module
+ *
+ * @author    Peter McWilliams <pmcwilliams@augustash.com>
+ * @copyright Copyright (c) 2021 August Ash (https://www.augustash.com)
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="checkout_message" resource="default" engine="innodb" comment="Checkout message table">
+        <column xsi:type="int" name="message_id" unsigned="true" nullable="false" identity="true" comment="Message ID"/>
+        <column xsi:type="varchar" name="content" nullable="true" length="255" comment="Message content"/>
+        <column xsi:type="smallint" name="is_active" unsigned="false" nullable="true" identity="false" default="1" comment="Active status"/>
+        <column xsi:type="date" name="from_date" comment="From"/>
+        <column xsi:type="date" name="to_date" comment="To"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="message_id"/>
+        </constraint>
+        <index referenceId="MESSAGE_IS_ACTIVE_TO_DATE_FROM_DATE" indexType="btree">
+            <column name="is_active"/>
+            <column name="to_date"/>
+            <column name="from_date"/>
+        </index>
+    </table>
+</schema>

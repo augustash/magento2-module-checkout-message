@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Checkout Message Module
+ *
+ * @author    Peter McWilliams <pmcwilliams@augustash.com>
+ * @copyright Copyright (c) 2021 August Ash (https://www.augustash.com)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Augustash_CheckoutMessage::global_message" resource="Augustash_CheckoutMessage::global_message" title="Checkout Message" translate="title" module="Augustash_CheckoutMessage" parent="Magento_Backend::marketing_communications" sortOrder="999" action="admin/checkout_message/edit/"/>
+    </menu>
+</config>

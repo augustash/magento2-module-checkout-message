@@ -1,0 +1,25 @@
+{
+    "name": "augustash/module-checkout-message",
+    "type": "magento2-module",
+    "description": "Add a global checkout message to Magento 2 projects.",
+    "version": "1.0.0",
+    "license": [
+        "proprietary"
+    ],
+    "require": {
+        "magento/module-backend": "*",
+        "magento/module-checkout": "*",
+        "magento/module-ui": "*"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Augustash\\CheckoutMessage\\": "src/"
+        },
+        "files": [
+            "src/registration.php"
+        ]
+    }
+}
